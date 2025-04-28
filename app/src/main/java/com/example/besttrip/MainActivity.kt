@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                     if (i == 100) {
                         progressBar.visibility = View.GONE
                         initText.text = "Terminé!"
+                        //TODO : Passer à une autre activité (choix de l'utilisateur)
                     }
                 }
             }

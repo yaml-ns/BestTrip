@@ -42,4 +42,14 @@
         android:progressTint="#FFFFFF"
         />
 
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="APVinc Tous droits réservés"
+        android:textColor="#74CEFA"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+        />
 </LinearLayout>

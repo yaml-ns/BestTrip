@@ -12,7 +12,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="235dp"
-        app:srcCompat="@drawable/best_trip" />
+        app:srcCompat="@drawable/logo_best_trip" />
 
     <TextView
         android:layout_width="383dp"
@@ -25,7 +25,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/progressBarText"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:text="Initialisation ..."
@@ -38,6 +38,8 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="381dp"
         android:layout_height="23dp"
-        android:background="#00F8F7F7" />
+        android:background="#00F8F7F7"
+        android:progressTint="#FFFFFF"
+        />
 
 </LinearLayout>

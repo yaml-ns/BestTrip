@@ -19,7 +19,7 @@
         android:layout_height="170dp"
         android:text="Un voyage sur mesure,\n un voyage pour vous !"
         android:textAlignment="center"
-        android:textColor="#F4F4F4"
+        android:textColor="#DAE5FA"
         android:textSize="24sp"
         android:textStyle="italic" />
 

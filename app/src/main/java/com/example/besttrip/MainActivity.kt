@@ -1,5 +1,6 @@
 package com.example.besttrip
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -36,8 +37,7 @@ class MainActivity : AppCompatActivity() {
                     initText.text = "Initialisation $i%"
                     if (i == 100) {
                         progressBar.visibility = View.GONE
-                        initText.text = "Terminé!"
-                        //TODO : Passer à une autre activité (choix de l'utilisateur)
+                        startActivity(Intent(this, PreferenceActivity::class.java))
                     }
                 }
             }

@@ -13,5 +13,6 @@ data class Destination(
     val climat: String,
     val lat: Double,
     val lon: Double,
-    val image: String
+    val image: String,
+    val description: String
 )

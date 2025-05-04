@@ -18,6 +18,7 @@
         <activity
             android:name=".PreferenceActivity"
             android:exported="false" />
+        <activity android:name=".ResultActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true" >
@@ -30,7 +31,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value=""/>
+            android:value="CLE API GOOGLE ICI"/>
     </application>
 
 </manifest>

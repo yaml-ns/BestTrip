@@ -1,7 +1,10 @@
 package com.example.besttrip
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -24,9 +27,15 @@ class ResultActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var imageDestination: ImageView
     private lateinit var textDetails: TextView
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+
+
+
+
+
 
         mapView = findViewById(R.id.mapViewResult)
         imageDestination = findViewById(R.id.imageResult)
@@ -48,6 +57,11 @@ class ResultActivity : AppCompatActivity(), OnMapReadyCallback {
         val description = intent.getStringExtra("description") ?: ""
         findViewById<TextView>(R.id.textDescription).text = description
 
+        findViewById<Button>(R.id.btnRetour).setOnClickListener {
+
+            finish()
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.rootLayout)) { view, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             view.setPadding(0, systemBars.top, 0, 0)
@@ -55,11 +69,11 @@ class ResultActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         btnCopier.setOnClickListener {
-            val coords = "$lat, $lon"
+            val mapsUrl = "https://www.google.com/maps/search/?api=1&query=$lat,$lon"
             val clipboard = getSystemService(CLIPBOARD_SERVICE) as android.content.ClipboardManager
-            val clip = android.content.ClipData.newPlainText("Coordonnées", coords)
+            val clip = android.content.ClipData.newPlainText("Lien Google Maps", mapsUrl)
             clipboard.setPrimaryClip(clip)
-            Toast.makeText(this, "Coordonnées copiées", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Lien Google Maps copié dans le presse-papiers", Toast.LENGTH_SHORT).show()
         }
 
         btnMaps.setOnClickListener {

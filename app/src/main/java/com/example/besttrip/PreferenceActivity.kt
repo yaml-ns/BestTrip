@@ -60,17 +60,31 @@ class PreferenceActivity : AppCompatActivity() {
                         else
                             "Aucune correspondance exacte. Suggestion : ${destinationFinale.nom}"
 
-                        AlertDialog.Builder(this@PreferenceActivity)
-                            .setTitle(titre)
-                            .setMessage(message)
-                            .setPositiveButton("Voir") { dialog, _ ->
-                                ouvrirResultActivity(destinationFinale)
-                                dialog.dismiss()
-                            }
-                            .setNegativeButton("Annuler") { dialog, _ ->
-                                dialog.dismiss()
-                            }
-                            .show()
+                        val dialogView = layoutInflater.inflate(R.layout.dialog_result, null)
+                        val dialog = AlertDialog.Builder(this@PreferenceActivity)
+                            .setView(dialogView)
+                            .create()
+
+                        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+                        dialogView.findViewById<TextView>(R.id.dialogTitle).text =
+                            if (result != null) "Destination trouvée" else "Suggestion aléatoire"
+                        dialogView.findViewById<TextView>(R.id.dialogMessage).text =
+                            if (result != null)
+                                "Votre destination personnalisée : ${destinationFinale.nom}"
+                            else
+                                "Aucune correspondance exacte. Suggestion : ${destinationFinale.nom}"
+
+                        dialogView.findViewById<Button>(R.id.btnVoir).setOnClickListener {
+                            ouvrirResultActivity(destinationFinale)
+                            dialog.dismiss()
+                        }
+                        dialogView.findViewById<Button>(R.id.btnAnnuler).setOnClickListener {
+                            dialog.dismiss()
+                        }
+
+                        dialog.show()
+
                     } else {
                         Toast.makeText(this@PreferenceActivity, "Aucune destination disponible.", Toast.LENGTH_SHORT).show()
                     }

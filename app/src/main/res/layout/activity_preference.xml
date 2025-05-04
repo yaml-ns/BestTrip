@@ -4,20 +4,17 @@
     android:id="@+id/rootLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
+    android:layout_height="match_parent"
+    android:background="#FAF9F9">
 
     <ImageView
         android:id="@+id/imageView2"
-        app:srcCompat="@drawable/logo_best_trip"
+        android:src="@drawable/logo_best_trip"
         android:layout_width="match_parent"
         android:layout_height="100sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="center"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/slogan"
@@ -25,67 +22,78 @@
         android:layout_height="wrap_content"
         android:text="Un voyage sur mesure,\n un voyage pour vous !"
         android:textAlignment="center"
-        android:textColor="#01345B"
+        android:textColor="#0288D1"
         android:textSize="14sp"
         android:textStyle="italic"
         app:layout_constraintTop_toBottomOf="@id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    app:layout_constraintTop_toBottomOf="@id/slogan"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/copyright">
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/slogan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
+        android:layout_height="wrap_content"
+        android:text="Veuillez choisir vos préférences"
+        android:textAlignment="center"
+        android:textColor="#212121"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Veuillez choisir vos préférences"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:layout_marginBottom="20dp"
-            />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activité"
+        android:textColor="#0288D1"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+    <Spinner
+        android:id="@+id/activitySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-        <Spinner
-            android:id="@+id/activitySpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </Spinner>
-        <Spinner
-            android:id="@+id/typeSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </Spinner>
-        <Spinner
-            android:id="@+id/climatSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </Spinner>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Type de destination"
+        android:textColor="#0288D1"
+        android:textSize="14sp"
+        android:layout_marginTop="12dp" />
+    <Spinner
+        android:id="@+id/typeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-<!--        <EditText-->
-<!--            android:id="@+id/champType"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="Type"-->
-<!--            android:layout_marginTop="8dp"/>-->
-        <Button
-            android:id="@+id/boutonDestination"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Voir Ma destination"
-            app:icon="@android:drawable/ic_menu_send" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Climat préféré"
+        android:textColor="#0288D1"
+        android:textSize="14sp"
+        android:layout_marginTop="12dp" />
+    <Spinner
+        android:id="@+id/climatSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/boutonDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Voir ma destination"
+        android:backgroundTint="#03A9F4"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
 
 
     <TextView
@@ -93,12 +101,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="APVinc Tous droits réservés"
-        android:textColor="#74CEFA"
+        android:textColor="#90CAF9"
         android:textStyle="italic"
         android:textAlignment="center"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
